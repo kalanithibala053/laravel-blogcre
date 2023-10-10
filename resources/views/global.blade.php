@@ -4,6 +4,8 @@
 <head>
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <meta charset="UTF-8">
+    <title>G-Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/css/blogcrelogo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>window.addEventListener("scroll", scrollnav);
@@ -11,11 +13,11 @@
 function scrollnav() {
   var y = window.scrollY;
   if (y > 10) {
-    document.getElementById("titlecar").style.backgroundColor = "#333333";
-    document.getElementById("titlecar").style.color = "white";
+    document.getElementById("titlecar").style.backgroundColor = "#e5ecf1";
+    
   } else {
     document.getElementById("titlecar").style.backgroundColor = "transparent";
-    document.getElementById("titlecar").style.color = "#BCFD4C";
+    
   }
 }</script>
 </head>
@@ -45,7 +47,7 @@ function scrollnav() {
 <div class="theme">{{$all->theme}}</div>
 <div class="content-container">
     <div class="content">{{$all->content}}</div>
-    <div class="image"> <img src="{{ asset('img/' . $all->img) }}" style="width: 300px; height: 200px;" alt="No image"></div>
+    <div class="image"> <img src="{{ asset('img/' . $all->img) }}" style="width: 260px; height: 200px;" alt="No image"></div>
 </div>
 
 

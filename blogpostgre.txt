@@ -1,0 +1,45 @@
+-- Table: public.Blogs
+
+-- DROP TABLE IF EXISTS public."Blogs";
+
+CREATE TABLE IF NOT EXISTS public."Blogs"
+(
+    id integer NOT NULL DEFAULT nextval('"Blogs_id_seq"'::regclass),
+    username character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    uimage character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    title character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    theme character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    content character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    img character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    "timestamp" timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    likes bigint NOT NULL DEFAULT 0,
+    CONSTRAINT "Blogs_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Blogs"
+    OWNER to postgres;
+
+-- Table: public.users
+
+-- DROP TABLE IF EXISTS public.users;
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id integer NOT NULL DEFAULT nextval('users_id_seq'::regclass),
+    username character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    img character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    email character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    gender character(1) COLLATE pg_catalog."default" NOT NULL,
+    mobile character varying(100) COLLATE pg_catalog."default",
+    "DOB" character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.users
+    OWNER to postgres;

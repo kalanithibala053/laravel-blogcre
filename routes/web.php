@@ -13,8 +13,10 @@ use App\Http\Controllers\BlogController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::get('/',function(){
+    return view('loading');
+});
+Route::get('/welcome', function () {
     if(session()->has('username')){
         return redirect("vie");
     }else{
@@ -35,7 +37,7 @@ Route::get('/logout', function () {
     {
         session()->pull('username');
     }
-    return redirect('login');
+    return redirect('/');
 });
 Route::post('/login', [AuthController::class, 'login']); 
 Route::post('/register', [AuthController::class, 'register']);

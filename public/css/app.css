@@ -1,9 +1,9 @@
 body {
 
-	background:white;
+	background:black;
 	font-family: 'Muli';
 	-webkit-font-smoothing: antialiased;
-  background-color: #6E6E6E;
+  background-color: #e5ecf1;
   margin:0;
   padding: 0;
 }
@@ -15,7 +15,7 @@ main {
 h1 {
 	font-size: 80px;
 	font-weight: bolder;
-	color:white;
+	color:black;
 	margin: 0 0 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -24,7 +24,7 @@ h2 {
 	margin: 0 0 50px;
 	font-size: 30px;
 	font-weight: bold;
-	color: #BCFD4C;
+	color: #077cce;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -32,7 +32,7 @@ h2 {
 	padding: 13px 40px;
 	background: transparent;
 	border: 1px solid transparent;
-	color: white;
+	color: black;
   font-size: 25px;
   font-weight: bold;
 	border-radius: 8px;
@@ -40,14 +40,15 @@ h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none;
 	&:hover {
-    color: white;
-    background-color: #BCFD4C;
+    color: black;
+    background-color: #077cce;
 		border: 1px solid rgba(255, 255, 255, 1);
 	}
 }
 .logo img{
+  
   width:240px;
-height:60px;
+height:40px;
 
 
 font-size:30px;
@@ -68,7 +69,7 @@ margin-top: 5px;
  top:0%;
 }
 .login-container {
-  background-color: #383838;
+  background-color: #78bcec;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin:  auto;
@@ -79,7 +80,7 @@ margin-top: 5px;
   padding-bottom: 30px;
 }
 .login-container1 {
-  background-color: #383838;
+  background-color: #78bcec;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin:  auto;
@@ -135,7 +136,7 @@ input{
   top:8% !important;
   font-size: 50px !important;
 	font-weight: bold;
-	color: #BCFD4C;
+	color: #077cce;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   transition: background-color 0.5s ease;
 background: rgba(255, 255, 255, 0.1);
@@ -155,7 +156,7 @@ Button{
 	padding: 15px 40px;
 	background: transparent;
 	border: 1px solid transparent;
-	color: white;
+	color: black;
   font-size: 25px;
   font-weight: bold;
 	border-radius: 8px;
@@ -164,8 +165,8 @@ Button{
   text-decoration: none;
   cursor: pointer;
 	&:hover {
-    color: white;
-    background-color: #BCFD4C;
+    color: black;
+    background-color: #97d1fa;
 		border: 1px solid rgba(255, 255, 255, 1);
 	}
 }
@@ -174,20 +175,20 @@ Button{
 }
 p{
   padding-top: 20px;
-  color:white;
+  color:black;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: none;
 }
 a{
  
-  color:white;
+  color:black;
   font-size: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: none;
 
 &:hover {
-  color: #BCFD4C;
+  color: white;
   
 }}
 .pad{
@@ -195,7 +196,7 @@ a{
 }
 label{
   font-size: 25px;
-  color:white;
+  color:black;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
@@ -205,7 +206,7 @@ height:auto;
 position:fixed;
 background-color:transparent;
   display: inline-block;
-  color: white;
+  color: black;
 }
 
 ul.navi {
@@ -217,7 +218,7 @@ ul.navi {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: #333333;
+  background: #78bcec;
   color: #fff;
   height:70px;
   
@@ -233,7 +234,7 @@ ul.navi {
   display:none;
 }
 .search-button {
-  background-color: #333;
+  background-color: #78bcec;
   color: #fff;
   border: none;
   padding: 8px 15px;
@@ -281,8 +282,8 @@ ul.navi input[type="text"] {
 	padding: 13px;
 	background: transparent;
 	border: 1px solid transparent;
-	color: white;
-  font-size: 25px;
+	color: black;
+  font-size: 20px;
   font-weight: bold;
 	border-radius: 8px;
 	transition: all .5s ease;
@@ -293,11 +294,13 @@ ul.navi input[type="text"] {
 .error{
   font-size: 18px;
   color:red;
+  font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
 }
 .success{
   font-size: 18px;
-  color:#BCFD4C;
+  color:white;
+  font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -315,10 +318,10 @@ ul.navi input[type="text"] {
   margin-top: 80px;
   margin-left: 50px;
 border-radius: 5px;
-background-color: #383838;
-  color:white;
+background-color:#78bcec;
+  color:black;
   border: solid ;
-  border-color: #383838;
+  border-color: #78bcec;
   margin-bottom: 50px;
 }
 .titlecard {
@@ -328,9 +331,9 @@ padding: 5px;
 width: fit-content;
 width:-moz-fit-content;
 height:50px;
-font-size: 50px;
+font-size: 35px;
 font-weight: bold;
-font-family: 'Times New Roman', Times, serif;
+font-family:Arial, Helvetica, sans-serif;
 border-radius: 10px;
 }
 .timestamp{
@@ -357,9 +360,11 @@ font-family: 'Times New Roman', Times, serif;
 }
 .theme{
   padding-top: 5px;
-  font-size: 25px;
+  font-size: 26px;
   padding-left: 25px;
   width:200px;
+  font-weight:bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .float{
@@ -387,11 +392,11 @@ font-family: 'Times New Roman', Times, serif;
   padding-left: 20px;
   padding-top: 20px;
   
-  font-size: 30px;
-  color:white;
+  font-size: 20px;
+  color:black;
   width:500px ;
   height:200px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
   word-break: break-all;
   margin-left: 5px;
   }

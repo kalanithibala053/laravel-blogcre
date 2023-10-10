@@ -1,0 +1,29 @@
+CREATE TABLE blogs (
+  id int NOT NULL AUTO_INCREMENT,
+  username varchar(45) NOT NULL,
+  uimage varchar(45) NOT NULL,
+  title varchar(45) NOT NULL,
+  theme varchar(45) NOT NULL,
+  content varchar(100) NOT NULL,
+  img varchar(45) NOT NULL,
+  timestamp timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  likes int NOT NULL DEFAULT '0',
+  PRIMARY KEY (id),
+  UNIQUE KEY id_UNIQUE (id)
+) ;
+
+
+
+CREATE TABLE users (
+  username varchar(100) NOT NULL,
+  name varchar(45) NOT NULL,
+  img varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  password varchar(45) NOT NULL,
+  gender varchar(45) NOT NULL,
+  mobile varchar(45) DEFAULT NULL,
+  DOB varchar(45) NOT NULL,
+  id int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id,username),
+  UNIQUE KEY username_UNIQUE (username)
+);

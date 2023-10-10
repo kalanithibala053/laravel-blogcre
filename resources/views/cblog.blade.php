@@ -3,6 +3,8 @@
 <head>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <meta charset="UTF-8">
+    <title>Create-Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/css/blogcrelogo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -33,10 +35,7 @@
                     <td><textarea id="content" name="content" rows="10" cols="50" required style="font-size:20px;"></textarea><br><span class="error">@error('content'){{ $message }}@enderror</span></td>
                 </tr>
                 
-                <tr>
-                    <td><label for="img">Image:</label></td>
-                    <td><input type="file" id="img" name="img" style="color:white;"></td>
-                </tr>
+               
             </table><br>
             <button type="submit">Submit</button>
         </form>

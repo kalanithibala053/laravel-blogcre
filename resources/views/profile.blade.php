@@ -2,7 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-   
+    <title>Profile</title>
+   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/css/blogcrelogo.png') }}">
 </head>
 <body>
     @if(session()->has('username'))
@@ -32,16 +33,13 @@
                
                 <tr>
                     <td><label for="mobile">Mobile</label></td>
-                    <td><input type="number" id="mobile" name="mob" required value="{{$dat->mobile}}" readonly></td>
+                    <td><input type="tel" id="mobile" name="mob" required value="{{$dat->mobile}}" readonly></td>
                 </tr>
                 <tr>
                     <td><label for="DOB">DOB</label></td>
                     <td><input type="date" id="DOB" name="DOB" required value="{{$dat->DOB}}" readonly></td>
                 </tr>
-                <tr>
-                    <td><label for="img">Profile</label></td>
-                    <td><input type="file" id="img" name="img" style="color:white;" ></td>
-                </tr>
+               
                 
     
             </table>

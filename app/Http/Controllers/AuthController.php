@@ -71,24 +71,6 @@ class AuthController extends Controller {
             'email'=>'required|email',
             'DOB'=>'required'
             ]);
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move(public_path('img'), $filename); 
-          
-        DB::table('users')->insert([
-           'username' => $username,
-           'name' => $name,
-         'email' => $email,
-         'password' => $password,
-         'gender'=>$gender,
-         'DOB'=>$DOB,
-         'img'=>$filename,
-        ]);
-        return view('register', ['success' => 'Registration successful! You can now log in.']);
-
-    }else{
         if($gender ==='m'){
         DB::table('users')->insert([
             'username' => $username,
@@ -109,7 +91,7 @@ class AuthController extends Controller {
             'img' =>"female.png" ,]);
             return view('register', ['success' => 'Registration successful! You can now log in.']);
         }
-    }
+    
     
     }
     public function Profile(){
@@ -127,67 +109,21 @@ class AuthController extends Controller {
         if($username===session('username')){
             $request-> validate([
                
-                'mob'=>'required|max:11|min:10',
+                'mob'=>'required|min:10',
                 'name'=>'required',
                 'email'=>'required|email',
                 'DOB'=>'required',
                 'DOB'=>'required'
                 ]);
-            if ($request->hasFile('img')) {
-                $file = $request->file('img');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '.' . $extension;
-                $file->move(public_path('img'), $filename); 
-               
-                $affected = DB::table('users')
-                ->where('id', $id)
-                ->update(['username' => $username ,'name'=>$name ,'mobile'=>$mobile,'DOB'=>$DOB,'img'=>$filename,'email'=>$email]);
-                $old=session('username');
-                DB::table('Blogs')
-                ->where('username', '=', $old)
-                ->update(['uimage'=>$filename]);    
-                $data = DB::table('users')->where('username', $username)->get();
-            return view('profile',['data'=>$data]);
-    
-        }else{
+            
             $affected = DB::table('users')
                 ->where('id', $id)
-                ->update(['name'=>$name,'mobile'=>$mobile,'DOB'=>$DOB]);
+                ->update(['name'=>$name,'mobile'=>$mobile,'DOB'=>$DOB,'email'=>$email]);
            
             $data = DB::table('users')->where('username', $username)->get();
             return view('profile',['data'=>$data]);
             
-        }
-        
-       
-    }else{
-        $request-> validate([
-            'username'=>'required|min:5|unique:users',
-            'mob'=>'required|max:11|min:10',
-            'name'=>'required',
-            'email'=>'required|email',
-            'DOB'=>'required'
-            ]);
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move(public_path('img'), $filename); 
-           
-            $affected = DB::table('users')
-            ->where('id', $id)
-            ->update(['username' => $username ,'name'=>$name ,'mobile'=>$mobile,'DOB'=>$DOB,'img'=>$filename,'email'=>$email]);
-            $old=session('username');
-            session()->pull('username');
-            session()->put('username',$username);
-            DB::table('Blogs')
-            ->where('username', '=', $old)
-            ->update(['username'=>$username,'uimage'=>$filename]);
-
-            $data = DB::table('users')->where('username', $username)->get();
-        return view('profile',['data'=>$data]);
-
-    }else{
+        }else{
         $affected = DB::table('users')
             ->where('id', $id)
             ->update(['username' => $username,'name'=>$name,'mobile'=>$mobile,'DOB'=>$DOB,'email'=>$email]);
@@ -204,7 +140,7 @@ class AuthController extends Controller {
         
     }
     }
-    }
+    
 
     public function changepass(Request $request){
         $username=$request->input('username');

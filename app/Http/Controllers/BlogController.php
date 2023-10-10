@@ -21,7 +21,7 @@ class BlogController extends Controller
         $uimage = null; 
         $request-> validate([
             
-            'title'=>'required|max:11|min:8|unique:Blogs',
+            'title'=>'required|min:8|unique:Blogs',
             'theme'=>'required',
             'content'=>'required|min:20'
             ]);
@@ -33,24 +33,8 @@ class BlogController extends Controller
         if ($userImage) {
             $uimage = $userImage->img;
         }
-    
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move(public_path('img'), $filename); 
-    
-            DB::table('Blogs')->insert([
-                'username' => $username,
-                'uimage' => $uimage, 
-                'title' => $title,
-                'theme' => $theme,
-                'content' => $content,
-                'img' => $filename,
-            ]);
-    
-            return view('cblog')->with('success', 'Created successfully!');
-        } else {
+
+       
             DB::table('Blogs')->insert([
                 'username' => $username,
                 'uimage' => $uimage, 
@@ -61,7 +45,7 @@ class BlogController extends Controller
             ]);
     
             return view('cblog')->with('success', 'Created successfully!');
-        }
+        
     }
 
     

@@ -4,6 +4,8 @@
 <head>
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/css/blogcrelogo.png') }}">
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -13,7 +15,7 @@
 function scrollnav() {
   var y = window.scrollY;
   if (y > 1) {
-    document.getElementById("titlecar").style.backgroundColor = "#333333";
+    document.getElementById("titlecar").style.backgroundColor = "#e5ecf1";
   } else {
     document.getElementById("titlecar").style.backgroundColor = "transparent";
   }
@@ -33,7 +35,7 @@ function scrollnav() {
 
 
 <div class="container" >   
-  <div class="titlecard" id="{{$all->title}}">{{ $all->title }}</div>
+  <div class="titlecard" id="{{$all->title}}" >{{ $all->title }}</div>
 <div class="theme">{{$all->theme}}</div>
 <div class="content-container">
     <div class="content">{{$all->content}}</div>

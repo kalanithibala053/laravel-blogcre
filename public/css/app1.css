@@ -9,7 +9,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color:transparent;
+  background-color:#97d1fa;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,10 @@ body {
   
 }
 
-.logo img {}
+.logo img {
+  width:240px;
+height:40px;
+}
 
 .nav-icons {
   display: flex;
@@ -48,6 +51,7 @@ body {
 }
 
 .nav-icons div:hover img {
+
 }
 #searchform{
   display: none;
@@ -64,10 +68,12 @@ body {
 }
 
 .drop1 {
+  margin-top: 30px;
   position: absolute;
   top: 100%;
+  
   right: 0;
-  background-color: #333333;
+  background-color: #78bcec;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: none;
   flex-direction: column;

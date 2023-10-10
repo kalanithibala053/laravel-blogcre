@@ -4,8 +4,9 @@
 <head>
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/css/blogcrelogo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Register</title>
 </head>
 <body>
     <div class=logo></div>
@@ -16,8 +17,7 @@
   <form method="POST" action="register" enctype="multipart/form-data">
   @csrf
 <table class="table">
-<tr> <td><label for="img">Image:</label></td> <td>
-    <input type="file" id="img" name="img"></td> </tr>
+
     <tr> <td><label for="name">Name</label> </td> <td><input type="text" name="name" placeholder="name"/>
            <span class="error">@error('name'){{ $message }}@enderror</span></td> </tr>
            <tr> <td><label for="username">Username</label></td> <td> <input type="text" name="username" placeholder="Username"/>
